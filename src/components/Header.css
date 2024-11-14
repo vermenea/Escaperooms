@@ -1,0 +1,23 @@
+header {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 400px;
+	background-image: url(../../public/img/hero-img-eleonora-1920.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.header-title {
+    text-align: center;
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	color: white;
+}
+.header-text {
+    text-align: center;
+	font-size: 1.4rem;
+	color: white;
+}

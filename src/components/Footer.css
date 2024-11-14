@@ -1,0 +1,12 @@
+footer {
+    height: 200px;
+    background-color: #2b2b2b;
+}
+
+.footer-title {
+    padding: 1em;
+    text-align: center;
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	color: rgb(255, 255, 255);
+}
