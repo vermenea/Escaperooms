@@ -1,0 +1,52 @@
+.nav {
+    position: fixed;
+    width: 100vw;
+    background-color: rgba(24, 24, 29, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation-link {
+    position: relative;
+    font-size: .8rem;
+    padding: 1.4em 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #ff6e00, #ff6e00 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  .navigation-link:before {
+    content: "";
+    background: #ff6e00;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  .navigation-link:hover {
+    background-position: 0;
+  }
+  .navigation-link:hover::before {
+    width: 100%;
+  }
+
+  .logo {
+    max-width: 10rem;
+    filter: invert(1);
+  }

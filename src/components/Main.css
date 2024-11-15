@@ -1,0 +1,12 @@
+.main {
+    height: 100vh;
+    background-color: #eeeeee;
+}
+
+.main-title {
+    padding: 1em;
+    text-align: center;
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	color: rgb(44, 44, 44);
+}
