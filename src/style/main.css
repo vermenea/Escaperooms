@@ -7,14 +7,13 @@
 }
 
 body {
-	color: black;
+	color: #fff;
 	font-family: 'Comfortaa', sans-serif;
 	scroll-behavior: smooth;
 }
 
 .wrapper {
 	margin: 0 auto;
-	padding: 0 6em;
 	width: 100%;
 	max-width: 1400px;
 }
