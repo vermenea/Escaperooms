@@ -1,4 +1,15 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
+
+const links = [
+	{ to: "/regulamin", label: "Regulamin" },
+	{ to: "/nasze-pokoje", label: "Nasze pokoje" },
+	{ to: "/rekrutacja", label: "Rekrutacja" },
+	{ to: "/do-pobrania", label: "Do pobrania"},
+	{ to: "/dla-szkol", label: "Dla szkół" },
+	{ to: "/dla-firm", label: "Dla firm" },
+	
+]
 
 export default function Main() {
 	return (
@@ -34,12 +45,11 @@ export default function Main() {
 						</div>
 						<div className="footer-box footer-box-mid">
 							<h3>Linki:</h3>
-							<a href="#">Regulamin</a>
-							<a href="#">Rekrutacja</a>
-							<a href="#">Do pobrania</a>
-							<a href="#">Nasze pokoje</a>
-							<a href="#">Dla szkół</a>
-							<a href="#">Dla firm</a>
+							{links.map((link, index) => (
+								<Link key={index} to={link.to} >{link.label}</Link>
+							))}
+								
+							
 						</div>
 						<div className="footer-box footer-box-right">
 							<iframe
