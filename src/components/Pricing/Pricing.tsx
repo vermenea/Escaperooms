@@ -1,4 +1,5 @@
-import './Pricing.css';
+import './Pricing.css'
+import PriceBox from './PriceBox/PriceBox'
 
 export default function Pricing() {
 	return (
@@ -15,6 +16,12 @@ export default function Pricing() {
 					<div>Poniedziałek - czwartek</div>
 					<div>Weekendy i święta</div>
 				</label>
+				<div className="prices-container">
+					<PriceBox playerNumber={2} pricePerPerson={49} pricePerRoom={98}></PriceBox>
+					<PriceBox playerNumber={2} pricePerPerson={49} pricePerRoom={98}></PriceBox>
+					<PriceBox playerNumber={2} pricePerPerson={49} pricePerRoom={98}></PriceBox>
+					<PriceBox playerNumber={2} pricePerPerson={49} pricePerRoom={98}></PriceBox>
+				</div>
 			</div>
 		</div>
 	);
