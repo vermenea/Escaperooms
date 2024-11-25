@@ -4,3 +4,8 @@ export interface Page404Styles {
   message: React.CSSProperties;
   link: React.CSSProperties;
 }
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category: string;
+}
