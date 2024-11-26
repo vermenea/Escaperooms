@@ -12,17 +12,119 @@
 	text-align: center;
 }
 
-.pricing-content h2 {
+.pricing-content-header {
 	margin: 1em 0 0.5em 0;
 	font-size: 3rem;
 }
 
-.pricing-content p {
+.pricing-content-text {
+	padding: 1em 0;
 	margin: 0 clamp(5px, 10vw, 40vw);
 	font-size: 1rem;
+	border-bottom: 1px solid rgb(82, 82, 82);
+}
+.pricing-content-span {
+	color: #f46811;
 }
 
-/* TOGGLE ------------------------ TOGGLE  */ 
+/* PRICING BOX ------------------------ PRICING BOX */
+
+.prices-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.priceBox {
+	margin: 2em 20px;
+	min-width: 150px;
+}
+
+.priceBox p {
+	font-size: 1.2rem;
+}
+
+.priceBoxPlayersNumber {
+	padding: 1em;
+	background-color: #fff;
+	color: #25272b;
+	border-radius: 5px 5px 0 0;
+}
+
+.priceBoxPlayersNumber span {
+	font-size: 1.6rem;
+	font-weight: 900;
+}
+
+.priceBoxPrice {
+	background-color: #25272b;
+}
+.priceBoxPrice .pricePerPerson {
+	padding: 1em 0 0 0;
+	font-size: 2.4rem;
+	font-weight: 900;
+	color: #f46811;
+}
+.priceBoxPrice .text {
+	font-size: 1.4rem;
+	padding-bottom: 0.6em;
+	border-bottom: 1px solid rgb(82, 82, 82);
+}
+.priceBoxPrice .priceSum {
+	font-size: 1rem;
+	padding: 1em;
+}
+
+.priceBoxButton {
+	padding: 1em;
+	background-color: #f46811;
+	border-radius: 0 0 5px 5px;
+}
+
+@media (max-width: 900px) {
+	.prices-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.prices-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* DISCOUNT BOX ------------------------ DISCOUNT BOX */
+
+.discountContainer {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.discountBox {
+	display: flex;
+	padding: 0 1em;
+	text-align: left;
+	border-left: 1px solid white;
+	background-color: rgb(71, 71, 71);
+}
+
+.iconCircle {
+	width: 70px;
+	aspect-ratio: 1/1;
+	margin-right: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f46811;
+	border-radius: 50%;
+}
+
+.discountIcon {
+	width: 70%;
+}
+
+/* TOGGLE ------------------------ TOGGLE  */
 .toggleCheckbox {
 	display: none;
 }
