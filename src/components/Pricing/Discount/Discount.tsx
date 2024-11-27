@@ -15,8 +15,8 @@ export default function Discount(props: DiscountProps) {
 				/>
 			</div>
 			<div>
-				<h3>{props.discountHeading}</h3>
-				<p>{props.discountText}</p>
+				<h3 className="discountHeading">{props.discountHeading}</h3>
+				<p className="discountDescription">{props.discountText}</p>
 			</div>
 		</div>
 	);
