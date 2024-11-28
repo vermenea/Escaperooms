@@ -9,8 +9,9 @@ export type DiscountProps = {
   discountLogo: string;
   discountHeading: string;
   discountText: string;
-
+}
 export interface FAQItem {
   question: string;
   answer: string;
   category: string;
+}
