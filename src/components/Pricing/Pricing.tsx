@@ -9,7 +9,7 @@ import logo from '../../../public/img/ER-logo-icon.svg';
 export default function Pricing() {
 	const [pricinToggle, setPricingToggle] = useState(false);
 
-	const handleToggleChange = (event) => {
+	const handleToggleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setPricingToggle(event.target.checked);
 	};
 
