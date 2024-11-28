@@ -1,8 +1,4 @@
-type DiscountProps = {
-	discountLogo: string;
-	discountHeading: string;
-	discountText: string;
-};
+import {DiscountProps} from '../../../types/types'
 
 export default function Discount(props: DiscountProps) {
 	return (

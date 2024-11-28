@@ -30,10 +30,8 @@
 /* PRICING BOX ------------------------ PRICING BOX */
 
 .prices-container {
-	/* width: 100%; */
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	/* justify-items: center; */
 }
 
 .priceBox {
@@ -107,14 +105,12 @@
 }
 
 .discountBox {
-	/* justify-content: center; */
 	align-items: center;
 	display: flex;
 	margin: 1em;
 	padding: 1em 1em;
 	text-align: left;
 	border-left: 1px solid white;
-	/* background-color: rgb(71, 71, 71); */
 }
 
 .iconCircle {
@@ -166,9 +162,8 @@
 	content: '';
 	position: absolute;
 	width: 50%;
-	height: 100%;
-	left: 0%;
-	border: 5px solid #f46811;
+	height: 101%;
+	left: -1px;
 	border-radius: 25px;
 	background: #f46811;
 	transition: all 0.3s;
@@ -181,7 +176,7 @@
 }
 
 .toggleCheckbox:checked + .toggleContainer::before {
-	left: 50%;
+	left: 50.5%	;
 }
 
 .toggleCheckbox:checked + .toggleContainer div:first-child {
