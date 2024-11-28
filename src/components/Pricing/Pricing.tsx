@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import './Pricing.css';
 import PriceBox from './PriceBox/PriceBox';
 import Discount from './Discount/Discount';
@@ -5,6 +7,27 @@ import Discount from './Discount/Discount';
 import logo from '../../../public/img/ER-logo-icon.svg';
 
 export default function Pricing() {
+	const [pricinToggle, setPricingToggle] = useState(false);
+
+	const handleToggleChange = (event) => {
+		setPricingToggle(event.target.checked);
+	};
+
+	const prices = pricinToggle
+		? [
+				{ playerNumber: 2, pricePerPerson: 59, pricePerRoom: 118 },
+				{ playerNumber: 3, pricePerPerson: 55, pricePerRoom: 165 },
+				{ playerNumber: 4, pricePerPerson: 49, pricePerRoom: 196 },
+				{ playerNumber: 5, pricePerPerson: 45, pricePerRoom: 225 },
+		  ]
+		: [
+				{ playerNumber: 2, pricePerPerson: 49, pricePerRoom: 98 },
+				{ playerNumber: 3, pricePerPerson: 45, pricePerRoom: 135 },
+				{ playerNumber: 4, pricePerPerson: 39, pricePerRoom: 156 },
+				{ playerNumber: 5, pricePerPerson: 35, pricePerRoom: 175 },
+		  ];
+
+	
 	return (
 		<div className="pricing">
 			<div className="pricing-content wrapper">
@@ -14,32 +37,20 @@ export default function Pricing() {
 					film w kinie, lepiej przyjść do nas i samemu stać się częścią filmu za
 					tę samą cenę. Doświadczysz różnicy!
 				</p>
-				<input type="checkbox" id="toggle" className="toggleCheckbox" />
+				<input type="checkbox" id="toggle" className="toggleCheckbox" onChange={handleToggleChange} />
 				<label htmlFor="toggle" className="toggleContainer">
 					<div>Poniedziałek - czwartek</div>
 					<div>Weekendy i święta</div>
 				</label>
 				<div className="prices-container">
-					<PriceBox
-						playerNumber={2}
-						pricePerPerson={49}
-						pricePerRoom={98}
-					></PriceBox>
-					<PriceBox
-						playerNumber={3}
-						pricePerPerson={45}
-						pricePerRoom={135}
-					></PriceBox>
-					<PriceBox
-						playerNumber={4}
-						pricePerPerson={39}
-						pricePerRoom={156}
-					></PriceBox>
-					<PriceBox
-						playerNumber={5}
-						pricePerPerson={35}
-						pricePerRoom={175}
-					></PriceBox>
+				{prices.map((price) => (
+						<PriceBox
+							key={price.playerNumber}
+							playerNumber={price.playerNumber}
+							pricePerPerson={price.pricePerPerson}
+							pricePerRoom={price.pricePerRoom}
+						/>
+					))}
 				</div>
 				<p className="pricing-content-text">
 					<span className="pricing-content-span">ZMIANA LICZBY GRACZY: </span>
