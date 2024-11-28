@@ -6,9 +6,9 @@ export interface Page404Styles {
 }
 
 export type DiscountProps = {
-	discountLogo: string;
-	discountHeading: string;
-	discountText: string;
+  discountLogo: string;
+  discountHeading: string;
+  discountText: string;
 };
 
 export interface FAQItem {
