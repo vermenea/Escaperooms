@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="ER-logo-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="8.2142634"
+     inkscape:cx="32.139218"
+     inkscape:cy="16.495697"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer5"
+     showgrid="true"
+     inkscape:clip-to-page="false">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="8.4666663"
+       spacingy="8.4666662"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="16"
+       enabled="true"
+       visible="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       inkscape:groupmode="layer"
+       id="layer5"
+       inkscape:label="E-doors"
+       transform="matrix(0.32832207,0,0,0.1930547,-5.7096658,-16.94662)">
+      <ellipse
+         style="fill:#ff6600;stroke-width:1.04891"
+         id="path1"
+         cx="30.242275"
+         cy="109.72157"
+         rx="12.753728"
+         ry="21.773287" />
+      <rect
+         style="fill:#ff6600;stroke-width:0.70848"
+         id="rect1"
+         width="13.336493"
+         height="43.888798"
+         x="29.849854"
+         y="87.781303" />
+      <path
+         id="path70"
+         style="opacity:1;fill:#ffffff;stroke-width:0.211867"
+         d="m 36.036326,92.554092 -10.197737,4.782637 9.128992,-2.944733 v 13.702794 4.41497 13.70278 l -9.128992,-2.94472 10.197737,4.78263 v -15.54069 -4.41497 z"
+         inkscape:label="edge" />
+      <path
+         id="path71"
+         style="opacity:1;fill:#ffffff;stroke-width:0.211867"
+         d="m 33.064283,97.149065 -6.645047,2.013653 0.0044,11.302322 -0.0044,11.30275 6.645047,2.01365 v -0.55916 l -6.14367,-1.85662 v -10.14996 -0.47916 h 5.383557 v -0.0609 -0.42086 -0.0609 h -5.383557 v -0.47921 -10.149973 l 6.14367,-1.856628 z"
+         inkscape:label="letter" />
+    </g>
+  </g>
+</svg>

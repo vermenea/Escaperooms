@@ -1,16 +1,24 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
+import logo from '../../public/img/ER-logo.svg';
 
 export default function Header() {
 	return (
-		<header>
-			<div className='wrapper'>
-				<h1 className="header-title">nagłówek headera</h1>
-				<h3 className="header-text">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat.
-				</h3>
+		<header className="hero">
+			<div className="wrapper hero-content">
+				<img
+					className="hero-logo"
+					src={logo}
+					alt="text logo with text escaperooms.pl"
+				/>
+				<h3 className="hero-text">Najszybsze 60min w twoim życiu</h3>
+
+				<Link
+					className="hero-link"
+					to="../../"
+				>
+					Zarezerwuj dziś !
+				</Link>
 			</div>
 		</header>
 	);
