@@ -1,33 +1,23 @@
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  Button,
-  Paper,
-  Grid,
-  styled,
-} from '@mui/material';
-
-const TimeSlotButton = styled(Button)(({ theme }) => ({
-  width: '100%',
-  marginBottom: '8px',
-  padding: '12px',
-  color: '#1f2022',
-  backgroundColor: '#eeecec',
-  '&:hover': {
-    backgroundColor: '#f46811',
-  },
-  border: '1px solid #f46811',
-}));
-
-const StyledPaper = styled(Paper)({
-  padding: '24px',
-  backgroundColor: '#eeecec',
-  color: '#1f2022',
-});
+import { useState } from 'react';
+import './Reservations.css';
+import PlayerAmountButton from './PlayerAmountButton';
+import SelectedOption from './SelectedOption';
 
 const Reservations = () => {
+  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
+  const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState<string | null>(null);
+
+  const handleSelect = (value: number | string) => {
+    if (typeof value === 'number') {
+      setSelectedAmount(value);
+    } else if (timeSlots.includes(value)) {
+      setSelectedTimeSlot(value);
+    } else {
+      setSelectedRoom(value);
+    }
+  };
+
   const timeSlots = [
     '10:00 - 11:00',
     '11:30 - 12:30',
@@ -39,165 +29,74 @@ const Reservations = () => {
     '20:30 - 21:30',
   ];
 
-  const weekDays = ['Pon', 'Wt', 'Śro', 'Czw', 'Pt', 'Sob', 'Nd'];
-  const currentDate = new Date();
-  const month = currentDate.getMonth();
-  const year = currentDate.getFullYear();
-
   return (
-    <Container maxWidth='lg' sx={{ py: 4 }}>
-      <Typography
-      variant='h4'
-      align='center'
-        sx={{
-          backgroundColor: '#f46811',
-          color: 'white',
-          py: 2,
-          mb: 4,
-        }}
-      >
-        Kalendarz rezerwacji
-      </Typography>
-      <Typography variant='h4' align='center' color='white' gutterBottom>
-        Dokonaj rezerwacji
-      </Typography>
-
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
-          <StyledPaper>
-            <Box component='form'>
-              <TextField
-                fullWidth
-                placeholder='Twoje imię lub nazwa drużyny'
-                margin='normal'
-                InputProps={{
-                  sx: {
-                    color: '#1f2022',
-                    backgroundColor: '#ececec',
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: '#f46811',
-                    },
-                  },
-                }}
+    <main className='container'>
+      {/* left panel - form */}
+      <section className='side'>
+        {/* credentials */}
+        <div className='credentials'>
+          <label htmlFor='name'>Twoje imię lub nazwa drużyny:</label>
+          <input type='name' placeholder='np. Mistrzowie Gry' />
+          <label htmlFor='email'>Email:</label>
+          <input type='email' placeholder='example@email.com' />
+          <label htmlFor='phone'>Telefon:</label>
+          <input type='phone' placeholder='000-000-000' />
+        </div>
+        {/* people */}
+        <div className='people'>
+          <p>Liczba graczy:</p>
+          <div className='button-container'>
+            {[2, 3, 4, 5, 6].map((amount) => (
+              <PlayerAmountButton
+                key={amount}
+                title={amount.toString()}
+                onSelect={() => handleSelect(amount)}
+                isSelected={selectedAmount === amount}
               />
-              <TextField
-                fullWidth
-                placeholder='Email'
-                margin='normal'
-                InputProps={{
-                  sx: {
-                    color: '#1f2022',
-                    backgroundColor: '#ececec',
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: '#f46811',
-                    },
-                  },
-                }}
+            ))}
+          </div>
+        </div>
+        {/* rooms */}
+        <div className='rooms'>
+          <p>Wybierz pokój zagadek:</p>
+          <div className='rooms-buttons'>
+            {[
+              'Pracownia Eleonory',
+              'Bursztynowa Komnata',
+              'Biuro detektywa',
+              'Pokój zaginionego dziecka',
+              'Egzorcyzm',
+              'Mistress',
+            ].map((title) => (
+              <SelectedOption
+                key={title}
+                title={title}
+                onSelect={() => handleSelect(title)}
+                isSelected={selectedRoom === title}
               />
-              <TextField
-                fullWidth
-                placeholder='Telefon'
-                margin='normal'
-                InputProps={{
-                  sx: {
-                    color: '#1f2022',
-                    backgroundColor: '#ececec',
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: '#f46811',
-                    },
-                  },
-                }}
-              />
-              <Typography color='#1f2022' sx={{ mt: 2, mb: 1 }}>
-                Liczba graczy:
-              </Typography>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <Button
-                    key={num}
-                    sx={{
-                      flex: 1,
-                      color: '#1f2022',
-                      backgroundColor: '#ececec',
-                      '&:hover': {
-                        backgroundColor: '#f46811',
-                      },
-                      minWidth: 0,
-                      height: '40px',
-                    }}
-                  >
-                    {num}
-                  </Button>
-                ))}
-              </Box>
-            </Box>
-          </StyledPaper>
-        </Grid>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <Grid item xs={12} md={4}>
-          <StyledPaper>
-            <Grid container spacing={1}>
-              {weekDays.map((day) => (
-                <Grid item xs={12 / 7} key={day}>
-                  <Typography align='center' color='#f46811'>
-                    {day}
-                  </Typography>
-                </Grid>
-              ))}
-              {Array.from({ length: 35 }, (_, i) => (
-                <Grid item xs={12 / 7} key={i}>
-                  <Button
-                    fullWidth
-                    sx={{
-                      color: '#1f2022',
-                      minWidth: 0,
-                      p: 1,
-                      '&:hover': {
-                        backgroundColor: '#f46811',
-                      },
-                    }}
-                  >
-                    {i + 1}
-                  </Button>
-                </Grid>
-              ))}
-            </Grid>
-          </StyledPaper>
-        </Grid>
+      {/* middle panel - calendar */}
+      <section className='middle'></section>
 
-        <Grid item xs={12} md={4}>
-          <StyledPaper>
-            <Typography variant='h6' gutterBottom>
-              Wybierz godzinę:
-            </Typography>
-            <Box>
-              {timeSlots.map((slot, index) => (
-                <TimeSlotButton key={index} variant='contained' sx={{backgroundColor: '#fff' }}>
-                  {slot}
-                </TimeSlotButton>
-              ))}
-            </Box>
-          </StyledPaper>
-        </Grid>
-      </Grid>
-
-      <Box sx={{ mt: 4 }}>
-        <Button
-          fullWidth
-          variant='contained'
-          sx={{
-            backgroundColor: '#f46811',
-            color: '#fff',
-            py: 2,
-            '&:hover': {
-              backgroundColor: '#f4511e',
-            },
-          }}
-        >
-          Zarezerwuj
-        </Button>
-      </Box>
-    </Container>
+      {/* right panel - form hours */}
+      <section className='side'>
+        <div className='time-slots'>
+          <p className='hour'>Wybierz godzinę:</p>
+          {timeSlots.map((slot) => (
+            <SelectedOption
+              key={slot}
+              title={slot}
+              onSelect={() => handleSelect(slot)}
+              isSelected={selectedTimeSlot === slot}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
   );
 };
 
