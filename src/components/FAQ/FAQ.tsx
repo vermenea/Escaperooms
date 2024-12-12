@@ -3,6 +3,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import '../../style/main.css';
 import { useState } from 'react';
 
 import './FAQ.css';
@@ -27,6 +28,7 @@ export default function FAQ() {
 
   return (
     <main className='main-wrapper'>
+ <section className='main-wrapper wrapper'>
       <h2>Najczęściej zadawane pytania</h2>
       <p className='body'>
         W tej sekcji strony prawdopodobnie znajdziesz
@@ -109,6 +111,8 @@ export default function FAQ() {
         się z nami telefonicznie pod numer "tutaj wstawimy numer
         przekierowujący"
       </p>
+    </section>
     </main>
+   
   );
 }
