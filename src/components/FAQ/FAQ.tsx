@@ -27,8 +27,8 @@ export default function FAQ() {
     : faqItems;
 
   return (
-    <main className='wrapper'>
- <section className='main-wrapper'>
+    <main className='main-wrapper'>
+ <section className='main-wrapper wrapper'>
       <h2>Najczęściej zadawane pytania</h2>
       <p className='body'>
         W tej sekcji strony prawdopodobnie znajdziesz
