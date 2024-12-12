@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Reservations.css';
+import '../../style/main.css';
 import PlayerAmountButton from './PlayerAmountButton';
 import SelectedOption from './SelectedOption';
 
@@ -30,71 +31,73 @@ const Reservations = () => {
   ];
 
   return (
-    <main className='container'>
-      {/* left panel - form */}
-      <section className='side'>
-        {/* credentials */}
-        <div className='credentials'>
-          <label htmlFor='name'>Twoje imię lub nazwa drużyny:</label>
-          <input type='name' placeholder='np. Mistrzowie Gry' />
-          <label htmlFor='email'>Email:</label>
-          <input type='email' placeholder='example@email.com' />
-          <label htmlFor='phone'>Telefon:</label>
-          <input type='phone' placeholder='000-000-000' />
-        </div>
-        {/* people */}
-        <div className='people'>
-          <p>Liczba graczy:</p>
-          <div className='button-container'>
-            {[2, 3, 4, 5, 6].map((amount) => (
-              <PlayerAmountButton
-                key={amount}
-                title={amount.toString()}
-                onSelect={() => handleSelect(amount)}
-                isSelected={selectedAmount === amount}
-              />
-            ))}
+    <main className='wrapper'>
+      <section className='container'>
+        {/* left panel - form */}
+        <section className='side'>
+          {/* credentials */}
+          <div className='credentials'>
+            <label htmlFor='name'>Twoje imię lub nazwa drużyny:</label>
+            <input type='name' placeholder='np. Mistrzowie Gry' />
+            <label htmlFor='email'>Email:</label>
+            <input type='email' placeholder='example@email.com' />
+            <label htmlFor='phone'>Telefon:</label>
+            <input type='phone' placeholder='000-000-000' />
           </div>
-        </div>
-        {/* rooms */}
-        <div className='rooms'>
-          <p>Wybierz pokój zagadek:</p>
-          <div className='rooms-buttons'>
-            {[
-              'Pracownia Eleonory',
-              'Bursztynowa Komnata',
-              'Biuro detektywa',
-              'Pokój zaginionego dziecka',
-              'Egzorcyzm',
-              'Mistress',
-            ].map((title) => (
+          {/* people */}
+          <div className='people'>
+            <p>Liczba graczy:</p>
+            <div className='button-container'>
+              {[2, 3, 4, 5, 6].map((amount) => (
+                <PlayerAmountButton
+                  key={amount}
+                  title={amount.toString()}
+                  onSelect={() => handleSelect(amount)}
+                  isSelected={selectedAmount === amount}
+                />
+              ))}
+            </div>
+          </div>
+          {/* rooms */}
+          <div className='rooms'>
+            <p>Wybierz pokój zagadek:</p>
+            <div className='rooms-buttons'>
+              {[
+                'Pracownia Eleonory',
+                'Bursztynowa Komnata',
+                'Biuro detektywa',
+                'Pokój zaginionego dziecka',
+                'Egzorcyzm',
+                'Mistress',
+              ].map((title) => (
+                <SelectedOption
+                  key={title}
+                  title={title}
+                  onSelect={() => handleSelect(title)}
+                  isSelected={selectedRoom === title}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* middle panel - calendar */}
+        <section className='middle'></section>
+
+        {/* right panel - form hours */}
+        <section className='side'>
+          <div className='time-slots'>
+            <p className='hour'>Wybierz godzinę:</p>
+            {timeSlots.map((slot) => (
               <SelectedOption
-                key={title}
-                title={title}
-                onSelect={() => handleSelect(title)}
-                isSelected={selectedRoom === title}
+                key={slot}
+                title={slot}
+                onSelect={() => handleSelect(slot)}
+                isSelected={selectedTimeSlot === slot}
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* middle panel - calendar */}
-      <section className='middle'></section>
-
-      {/* right panel - form hours */}
-      <section className='side'>
-        <div className='time-slots'>
-          <p className='hour'>Wybierz godzinę:</p>
-          {timeSlots.map((slot) => (
-            <SelectedOption
-              key={slot}
-              title={slot}
-              onSelect={() => handleSelect(slot)}
-              isSelected={selectedTimeSlot === slot}
-            />
-          ))}
-        </div>
+        </section>
       </section>
     </main>
   );
